@@ -1,0 +1,118 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000;
+}
+
+.skeleton {
+  position: relative;
+  width: 50px;
+  height: 100px;
+  animation: dance 1s infinite;
+}
+
+.head, .body, .arm, .leg {
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.head {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.body {
+  width: 30px;
+  height: 50px;
+  position: absolute;
+  top: 50px;
+  left: 10px;
+}
+
+.arm {
+  width: 10px;
+  height: 50px;
+  position: absolute;
+  top: 50px;
+}
+
+.arm.left {
+  left: -20px;
+  transform-origin: top left;
+  animation: armDanceLeft 1s infinite;
+}
+
+.arm.right {
+  right: -20px;
+  transform-origin: top right;
+  animation: armDanceRight 1s infinite;
+}
+
+.leg {
+  width: 10px;
+  height: 50px;
+  position: absolute;
+  top: 100px;
+}
+
+.leg.left {
+  left: 0;
+  transform-origin: top left;
+  animation: legDanceLeft 1s infinite;
+}
+
+.leg.right {
+  right: 0;
+  transform-origin: top right;
+  animation: legDanceRight 1s infinite;
+}
+
+@keyframes dance {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes armDanceLeft {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(30deg);
+  }
+}
+
+@keyframes armDanceRight {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-30deg);
+  }
+}
+
+@keyframes legDanceLeft {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(30deg);
+  }
+}
+
+@keyframes legDanceRight {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-30deg);
+  }
+}
